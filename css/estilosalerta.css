@@ -1,0 +1,32 @@
+@media screen and (max-width: 400px) {
+    h1 {
+      font-size: 1.5rem;
+      padding: 0.5rem;
+      text-align: center;
+    }
+  
+    form .row.g-3 {
+      flex-direction: column;
+    }
+  
+    form .col-md-4 {
+      width: 100%;
+    }
+  
+    .text-center.mt-4 {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  
+    /* .table {
+      font-size: 0.875rem;
+    }
+  
+    .table th,
+    .table td {
+      white-space: nowrap;
+      text-align: center;
+    } */
+  }
+  

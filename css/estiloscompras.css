@@ -1,0 +1,19 @@
+@media screen and (max-width: 576px) {
+    h1 {
+        font-size: 1.5rem;
+        padding: 0.5rem;
+    }
+
+    .table {
+        font-size: 0.9rem;
+        word-break: break-word;
+    }
+
+    .table th, .table td {
+        padding: 0.5rem;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}

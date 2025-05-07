@@ -1,0 +1,54 @@
+<html>
+
+<head>
+	<title>LOGIN</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.css" />
+	<link type="text/css" rel="stylesheet" href="css/estiloslogin.css" />
+</head>
+
+
+<body onload="configurar()" class="bg-dark text-white">
+	<div class="container mt-4">
+
+		<h1 class="text-center border-bottom border-primary border-opacity-50 border-3 mb-4 rounded-pill py-3">Login</h1>
+		<div class="row justify-content-center">
+			<div class="col-md-6 col-lg-4">
+				<form id="formulario" action="#" method="post">
+					<fieldset>
+						<div class="row mb-3">
+							<div class="col-12">
+								<label class="form-label" for="login">Login</label>
+								<input class="form-control" id="login" name="login" type="text"
+									required>
+							</div>
+						</div>
+						<div class="row mb-3">
+							<div class="col-12">
+								<label class="form-label" for="senha">Senha</label>
+								<input class="form-control" id="senha" name="senha" type="password"
+									required>
+							</div>
+						</div>
+
+						<div class="row mb-3">
+							<div class="col-12 d-flex justify-content-end">
+								<button class="btn btn-primary" type="button" onclick="autenticar()">Autenticar</button>
+							</div>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.19.3/jquery.validate.min.js"></script>
+    
+    <script src="js/bootstrap.js"></script>
+    <script src="js/js01.js"></script>
+</body>
+
+</html>
