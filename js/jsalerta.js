@@ -6,30 +6,6 @@ window.onload = function () {
     carregarProdutos();
 };
 
-function carregarProdutos() {
-    fetch("https://api-odinline.odiloncorrea.com/produto")
-        .then(res => {
-            if (!res.ok) {
-                throw new Error("Erro ao carregar produtos.");
-            }
-            return res.json();
-        })
-        .then(produtos => {
-            const select = document.getElementById("idProduto");
-            select.innerHTML = '<option value="">Selecione um produto</option>';
-
-            produtos.forEach(produto => {
-                const option = document.createElement("option");
-                option.value = produto.id;
-                option.textContent = `${produto.id} - ${produto.descricao}`;
-                select.appendChild(option);
-            });
-        })
-        .catch(err => {
-            alert("Erro ao carregar produtos: " + err.message);
-        });
-}
-
 function enviarFormulario(evento) {
     evento.preventDefault();
 
@@ -38,7 +14,7 @@ function enviarFormulario(evento) {
     const acao = document.getElementById("acao").value;
 
     if (!idProduto || isNaN(valorDesejado)) {
-        alert("Por favor, selecione um produto e informe o valor desejado.");
+        alert("Selecione um produto e informe o valor desejado.");
         return;
     }
 
@@ -52,7 +28,7 @@ function enviarFormulario(evento) {
         .then(produto => {
             let alertas = JSON.parse(localStorage.getItem("alertas")) || [];
             if (alertas.some(a => a.id === produto.id)) {
-                alert("Este produto já está com alerta ativo.");
+                alert("Esse produto já está com um alerta ativo.");
                 return;
             }
 
@@ -118,7 +94,7 @@ function monitoramento() {
                             removerDaTabelaEStorage(produto.id);
                             window.location.href = "compras.html";
                         } else if (alerta.acao === "alertar") {
-                            alert(`O produto "${produto.descricao}" atingiu o valor desejado!`);
+                            alert(`O produto "${produto.descricao}" atingiu o valor desejado! A melhor hora de comprar é agora!`);
 
                             removerDaTabelaEStorage(produto.id);
                         }
@@ -150,7 +126,7 @@ async function carregarProdutos() {
             select.appendChild(option);
         });
     } catch (error) {
-        alert("Erro ao carregar produtos.");
+        alert("Erro ao carregar os produtos da API.");
         console.error(error);
     }
 }

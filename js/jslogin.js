@@ -2,49 +2,10 @@ $(function() {
     validacao();
 });
 
-function validacao() {
-    if (!$.fn.validate) {
-        console.error("jQuery Validate não está carregado!");
-        carregarjQueryValidate();
-        return;
-    }
-
-    $("#formulario").validate({
-        rules: {
-            login: {required: true},
-            senha: {required: true}
-        },
-        messages: {
-            login: {required: "Campo obrigatório"},
-            senha: {required: "Campo obrigatório"}
-        },
-        errorElement: "span",
-        errorClass: "error-message"
-    });
-}
-
-function carregarjQueryValidate() {
-    console.log("Carregando jQuery Validate dinamicamente...");
-    $.getScript("https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js")
-        .done(function() {
-            console.log("jQuery Validate carregado com sucesso!");
-            validacao();
-        })
-        .fail(function() {
-            console.error("Falha ao carregar jQuery Validate!");
-            $("#formulario").submit(function(e) {
-                if (!$("#login").val() || !$("#senha").val()) {
-                    alert("Preencha todos os campos!");
-                    e.preventDefault();
-                }
-            });
-        });
-}
-
 async function autenticar() {
     if (!$.fn.validate) {
         if (!$("#login").val() || !$("#senha").val()) {
-            alert("Preencha todos os campos!");
+            alert("Preencha todos os campos");
             return;
         }
     } else if (!$("#formulario").valid()) {
@@ -69,6 +30,45 @@ async function autenticar() {
         }
     } catch (error) {
         console.error("Erro na autenticação:", error);
-        alert("Falha na autenticação. Verifique suas credenciais e tente novamente.");
+        alert("Login ou senha errados. Tente novamente.");
     }
+}
+
+function validacao() {
+    if (!$.fn.validate) {
+        console.error("jQuery Validate não está carregado");
+        jQueryValidate();
+        return;
+    }
+
+    $("#formulario").validate({
+        rules: {
+            login: {required: true},
+            senha: {required: true}
+        },
+        messages: {
+            login: {required: "Campo obrigatório"},
+            senha: {required: "Campo obrigatório"}
+        },
+        errorElement: "span",
+        errorClass: "error-message"
+    });
+}
+
+function jQueryValidate() {
+    console.log("Carregando jQuery Validate dinamicamente...");
+    $.getScript("https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js")
+        .done(function() {
+            console.log("jQuery Validate carregado com sucesso");
+            validacao();
+        })
+        .fail(function() {
+            console.error("Falha ao carregar jQuery Validate");
+            $("#formulario").submit(function(e) {
+                if (!$("#login").val() || !$("#senha").val()) {
+                    alert("Preencha todos os campos");
+                    e.preventDefault();
+                }
+            });
+        });
 }

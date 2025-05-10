@@ -8,8 +8,14 @@
 	<link type="text/css" rel="stylesheet" href="css/estilos.css" />
 </head>
 
-<body class="bg-dark text-white"y>
-	<div class="container mt-4">
+<header class="bg-primary bg-opacity-50 text-white py-1">
+	<div class="text-end">
+		<a href="index.html" class="btn text-white border border-light border-opacity-50 border-2 me-1 shadow-sm py-1">LOGOUT</a>
+	</div>
+</header>
+
+<body class="bg-dark text-white d-flex flex-column min-vh-100">
+	<div class="container mt-4 flex-grow-1">
 		<h1 class="text-center border-bottom border-primary border-opacity-50 border-3 mb-4 rounded-pill py-3">Menu</h1>
 		<div class="row">
 			<div class="col-md-12">
@@ -25,12 +31,12 @@
 						</div> -->
 						<div class="row mb-3">
 							<div class="col-12 col-md-6 mb-2 d-flex justify-content-center justify-content-md-end">
-								<button class="btn btn-primary w-100 w-md-auto" type="button"
-									onclick="window.location.href='compras.html'">Compras</button>
+								<button class="btn btn-primary w-100 w-md-auto border border-dark border-opacity-50 border-2 shadow-sm" type="button"
+									onclick="window.location.href='compras.html'">Visualizar Compras</button>
 							</div>
 							<div class="col-12 col-md-6 d-flex mb-2 justify-content-center justify-content-md-start">
-								<button class="btn btn-primary w-100 w-md-auto" type="button"
-									onclick="window.location.href='alerta.html'">Alerta</button>
+								<button class="btn btn-primary w-100 w-md-auto border border-dark border-opacity-50 border-2 shadow-sm" type="button"
+									onclick="window.location.href='alerta.html'">Criar alerta</button>
 							</div>
 						</div>
 					</fieldset>
@@ -38,6 +44,12 @@
 			</div>
 		</div>
 	</div>
+
+	<footer class="bg-dark text-white-50 py-3 mt-auto border-top border-primary border-opacity-50">
+		<div class="container text-center">
+			<span>Bruno Durso - CEFETMG</span>
+		</div>
+	</footer>
 
 	<script type="text/javascript" src="js/bootstrap.js"></script>
 	<script type="text/javascript" src="js/usuario.js"></script>

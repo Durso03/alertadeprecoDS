@@ -8,11 +8,14 @@
 	<link type="text/css" rel="stylesheet" href="css/estiloslogin.css" />
 </head>
 
+<header class="bg-primary bg-opacity-50 text-white py-1">
+</header>
 
-<body onload="configurar()" class="bg-dark text-white">
-	<div class="container mt-4">
+<body onload="configurar()" class="bg-dark text-white d-flex flex-column min-vh-100">
+	<div class="container mt-4 flex-grow-1">
 
-		<h1 class="text-center border-bottom border-primary border-opacity-50 border-3 mb-4 rounded-pill py-3">Login</h1>
+		<h1 class="text-center border-bottom border-primary border-opacity-50 border-3 mb-4 rounded-pill py-3">Bem-vindo(a)
+		</h1>
 		<div class="row justify-content-center">
 			<div class="col-md-6 col-lg-4">
 				<form id="formulario" action="#" method="post">
@@ -20,21 +23,19 @@
 						<div class="row mb-3">
 							<div class="col-12">
 								<label class="form-label" for="login">Login</label>
-								<input class="form-control" id="login" name="login" type="text"
-									required>
+								<input class="form-control" id="login" name="login" type="text" required>
 							</div>
 						</div>
 						<div class="row mb-3">
 							<div class="col-12">
 								<label class="form-label" for="senha">Senha</label>
-								<input class="form-control" id="senha" name="senha" type="password"
-									required>
+								<input class="form-control" id="senha" name="senha" type="password" required>
 							</div>
 						</div>
 
 						<div class="row mb-3">
 							<div class="col-12 d-flex justify-content-end">
-								<button class="btn btn-primary" type="button" onclick="autenticar()">Autenticar</button>
+								<button class="btn btn-primary" type="button" onclick="autenticar()">Entrar</button>
 							</div>
 						</div>
 					</fieldset>
@@ -43,12 +44,18 @@
 		</div>
 	</div>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<footer class="bg-dark text-white-50 py-3 mt-auto border-top border-primary border-opacity-50">
+		<div class="container text-center">
+			<span>Bruno Durso - CEFETMG</span>
+		</div>
+	</footer>
 
-    <script src="https://cdn.jsdelivr.net/jquery.validation/1.19.3/jquery.validate.min.js"></script>
-    
-    <script src="js/bootstrap.js"></script>
-    <script src="js/jslogin.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.19.3/jquery.validate.min.js"></script>
+
+	<script src="js/bootstrap.js"></script>
+	<script src="js/jslogin.js"></script>
 </body>
 
 </html>

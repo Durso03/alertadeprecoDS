@@ -1,4 +1,4 @@
-window.onload = function carregarCompras() {
+window.onload = function carregarLSCompras() {
     var compras = JSON.parse(localStorage.getItem("compras")) || [];
 
     var tbody = document.querySelector("#tabelaCompras tbody");
@@ -8,7 +8,7 @@ window.onload = function carregarCompras() {
         var celula = document.createElement("td");
         celula.colSpan = 3;
         celula.className = "text-center text-muted";
-        celula.innerText = "Nenhuma compra registrada.";
+        celula.innerText = "Nenhum centavo gasto ainda :(";
         linha.appendChild(celula);
         tbody.appendChild(linha);
         return;
